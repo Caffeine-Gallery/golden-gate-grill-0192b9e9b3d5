@@ -1,0 +1,16 @@
+type Result = 
+ variant {
+   err: text;
+   ok: text;
+ };
+type Reservation = 
+ record {
+   date: text;
+   guests: nat;
+   name: text;
+   time: text;
+ };
+service : {
+  getReservations: () -> (vec Reservation) query;
+  makeReservation: (text, text, text, nat) -> (Result);
+}
